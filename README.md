@@ -1,5 +1,11 @@
 # DMSRoute
 
+[![PyPI](https://img.shields.io/pypi/v/dmsroute?style=flat-square)](https://pypi.org/project/dmsroute/)
+[![PyVersions](https://img.shields.io/pypi/pyversions/dmsroute?style=flat-square)](https://github.com/kren-ai-lab/dms-route)
+[![Tests](https://img.shields.io/github/actions/workflow/status/kren-ai-lab/dms-route/ci.yml?style=flat-square)](https://github.com/kren-ai-lab/dms-route/actions/workflows/ci.yml)
+![License](https://img.shields.io/github/license/kren-ai-lab/dms-route?style=flat-square)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.21924522-blue?style=flat-square)](https://doi.org/10.5281/zenodo.21924522)
+
 DMSRoute obtains and standardizes Deep Mutational Scanning (DMS) datasets
 from ProteinGym and MaveDB. It provides a command-line interface, a Python API,
 and a YAML pipeline for producing consistent datasets from source-specific
@@ -17,12 +23,12 @@ Supported sources:
 
 ## Installation
 
-DMSRoute requires Python 3.10 or newer.
+DMSRoute requires Python 3.11 or newer.
 
 ```bash
-git clone https://github.com/kren-ai-lab/dms-route.git
-cd dms-route
-python -m pip install -e .
+pip install dmsroute
+# or with uv:
+uv add dmsroute
 ```
 
 Check the installation with:
@@ -32,7 +38,7 @@ dmsroute --help
 ```
 
 Development setup and validation commands are documented in
-[`DEVELOPMENT.md`](DEVELOPMENT.md).
+[`DEVELOPMENT.md`](https://github.com/kren-ai-lab/dms-route/blob/main/DEVELOPMENT.md).
 
 ## Quick start
 
@@ -165,7 +171,7 @@ output:
 Use `--only proteingym` or `--only mavedb` to select one configured source.
 `--dry-run` resolves configuration and source metadata without writing
 processed datasets. The full configuration contract is documented in
-[`examples/config.reference.yml`](examples/config.reference.yml).
+[`examples/config.reference.yml`](https://github.com/kren-ai-lab/dms-route/blob/main/examples/config.reference.yml).
 
 ## Output
 
@@ -212,11 +218,11 @@ Local tables can be standardized with `build_proteingym_dataset`,
 
 ## Documentation
 
-- [`examples/`](examples/) contains notebooks for acquisition, parsing, and
+- [`examples/`](https://github.com/kren-ai-lab/dms-route/tree/main/examples) contains notebooks for acquisition, parsing, and
   score transformations.
-- [`examples/config.reference.yml`](examples/config.reference.yml) documents
+- [`examples/config.reference.yml`](https://github.com/kren-ai-lab/dms-route/blob/main/examples/config.reference.yml) documents
   every YAML option.
-- [`DEVELOPMENT.md`](DEVELOPMENT.md) covers development setup, architecture,
+- [`DEVELOPMENT.md`](https://github.com/kren-ai-lab/dms-route/blob/main/DEVELOPMENT.md) covers development setup, architecture,
   tests, and packaging checks.
 - `dmsroute <command> --help` is the reference for CLI options.
 
@@ -226,7 +232,7 @@ If you use DMSRoute in your research, please cite:
 
 > Fernández-Villegas, D.; Escobedo, S.; Alarcón, T.; Medina-Ortiz, D.
 > *DMSRoute*.
-> Version 0.1.1, 2026. Zenodo.
+> Version 0.1.2, 2026. Zenodo.
 > https://doi.org/10.5281/zenodo.21924522
 
 ```bibtex
@@ -234,7 +240,7 @@ If you use DMSRoute in your research, please cite:
   author    = {Fernández-Villegas, Diego and Escobedo, Sebastián and Alarcón, Tomás and Medina-Ortiz, David},
   title     = {DMSRoute},
   year      = {2026},
-  version   = {0.1.1},
+  version   = {0.1.2},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.21924522},
   url       = {https://doi.org/10.5281/zenodo.21924522}
@@ -243,4 +249,4 @@ If you use DMSRoute in your research, please cite:
 
 ## License
 
-MIT. See [`LICENSE`](LICENSE).
+MIT. See [`LICENSE`](https://github.com/kren-ai-lab/dms-route/blob/main/LICENSE).

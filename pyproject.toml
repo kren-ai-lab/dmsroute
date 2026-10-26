@@ -1,16 +1,47 @@
 [build-system]
-requires = ["setuptools>=77", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [project]
 name = "dmsroute"
-version = "0.1.1"
+dynamic = ["version"]
 description = "Utilities for acquiring, parsing, validating, harmonizing, and standardizing DMS datasets from MaveDB and ProteinGym."
-readme = "README.md"
-requires-python = ">=3.10"
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.11"
 license = "MIT"
 license-files = ["LICENSE"]
-authors = [{ name = "Kren AI Lab", email = "krenai@umag.cl" }]
+authors = [
+  { name = "Diego Fernández-Villegas" },
+  { name = "Sebastián Escobedo" },
+  { name = "Tomás Alarcón" },
+  { name = "David Medina-Ortiz" },
+]
+maintainers = [
+  { name = "Diego Fernández-Villegas" },
+  { name = "Sebastián Escobedo" },
+  { name = "Tomás Alarcón" },
+  { name = "David Medina-Ortiz" },
+]
+keywords = [
+  "deep-mutational-scanning",
+  "dms",
+  "mavedb",
+  "proteingym",
+  "data-harmonization",
+  "bioinformatics",
+  "protein",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
 dependencies = [
   "pandas>=2.0",
   "numpy>=1.24",
@@ -29,7 +60,23 @@ dev = [
 ]
 
 [project.urls]
+Homepage = "https://github.com/kren-ai-lab/dms-route"
 Repository = "https://github.com/kren-ai-lab/dms-route"
+Issues = "https://github.com/kren-ai-lab/dms-route/issues"
+Documentation = "https://github.com/kren-ai-lab/dms-route#readme"
 
-[tool.setuptools.packages.find]
-include = ["dmsroute*"]
+[tool.hatch.version]
+path = "dmsroute/_version.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/dmsroute",
+  "/tests",
+  "/examples",
+  "/CHANGELOG.md",
+  "/CITATION.cff",
+  "/DEVELOPMENT.md",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["dmsroute"]

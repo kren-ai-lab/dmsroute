@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import logging
 
+from dmsroute._version import __version__
 from dmsroute.builders import (
     build_mavedb_dataset,
     build_proteingym_dataset,
@@ -136,6 +137,7 @@ logger = logging.getLogger(__name__)
 logger.addHandler(logging.NullHandler())
 
 __all__ = [
+    "__version__",
     "build_mavedb_dataset",
     "build_proteingym_dataset",
     "build_proteingym_indel_dataset",

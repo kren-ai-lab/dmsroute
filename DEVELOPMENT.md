@@ -6,7 +6,7 @@ This project is the `DMSRoute` Python package and command-line interface for acq
 
 The project currently declares:
 
-- Python `>=3.10`
+- Python `>=3.11`
 - core runtime dependencies in `pyproject.toml`
 - the `dev` extra includes `pytest>=8.0`
 
@@ -106,7 +106,7 @@ Optional clean-install validation:
 ```bash
 python -m venv /tmp/dmsroute-check
 # activate the temporary environment and install the built wheel
-python -m pip install dist/dmsroute-0.1.1-py3-none-any.whl
+python -m pip install dist/dmsroute-*-py3-none-any.whl
 python -m pip check
 dmsroute --help
 ```
@@ -133,6 +133,6 @@ Before tagging or publishing a release candidate, confirm:
 - `twine check --strict` passes
 - clean install succeeds in a temporary environment
 - CLI smoke checks pass
-- version and citation metadata are current
-- tag only after all checks pass
+- `dmsroute/_version.py` and `CHANGELOG.md` are updated
+- tag only after all checks pass; pushing a `v*` tag publishes to PyPI through `.github/workflows/publish-pypi.yml`
 
